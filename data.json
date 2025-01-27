@@ -1,0 +1,471 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Zack Snyder's Justice League",
+      "releaseDate": "18 Mar 2021",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FZSJL.jpg?alt=media&token=5f7008e8-ea28-40e9-af58-fe5ebc55ecea",
+      "cast": [
+        {
+          "name": "Ben Affleck",
+          "role": "Bat Man"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Zack Snyder",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Avengers Infinity War",
+      "releaseDate": "27 April 2018",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FInfinity%20war.jpg?alt=media&token=f5eacb87-d8d2-45a4-8e8d-f4d5e6868f05",
+      "cast": [
+        {
+          "name": "Robert Downey Jr.",
+          "role": "Iron Man"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Russo Brothers",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "The Dark Knight",
+      "releaseDate": "02 Aug 2008",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FDark%20knight.jpg?alt=media&token=51c54a88-b34d-4aaf-92b7-6b4ff109464f",
+      "cast": [
+        {
+          "name": "Heath ledger",
+          "role": "Joker"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Christopher Nolan ",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Avengers Endgame",
+      "releaseDate": "27 April 2019",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FEndgame.png?alt=media&token=ed7d45dc-45a3-4ebc-bd1d-cebb61eca6dc",
+      "cast": [
+        {
+          "name": "Chris Evans",
+          "role": "Captain America"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Russo Brothers",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Man of Steel",
+      "releaseDate": "03 July 2013",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FMOS.jpg?alt=media&token=dfab6f0c-7a8e-43f5-b018-8ddcd1cc8fce",
+      "cast": [
+        {
+          "name": "Henry Cavil",
+          "role": "Super-Man"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Zack Snyder",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Joker Folie Deux",
+      "releaseDate": "04 Oct 2024",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FFolie%20deux.jpg?alt=media&token=e44275d9-6c93-4641-a2f0-69c2f9d16a4b",
+      "cast": [
+        {
+          "name": "Joaquin Pheonix",
+          "role": "Arthur fleck/Joker"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Todd Philips",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Captain America Brave New World",
+      "releaseDate": "14 Feb 2025",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FCABNW.jpg?alt=media&token=7a3adc88-cbf8-4efb-aaaa-811860893292",
+      "cast": [
+        {
+          "name": "Anthony Mackie",
+          "role": "Sam wilson/Captain America"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Julius Onah",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Thunderbolts",
+      "releaseDate": "02 May 2025",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FThunderbolts.jpg?alt=media&token=a1c4d14b-8d6b-4222-9ce5-4c7c4384f65e",
+      "cast": [
+        {
+          "name": "David Harbour",
+          "role": "Red guardian"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Jake Schreier",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Watchmen",
+      "releaseDate": "6 March 2009",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FWatchmen.jpeg?alt=media&token=584d8b43-50ac-4abb-a987-26c4e29d6530",
+      "cast": [
+        {
+          "name": "Patrick wilson",
+          "role": "Nite owl"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Zack Snyder",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "V for Vendetta",
+      "releaseDate": "11 December 2005",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FV%20for%20vendetta.jpg?alt=media&token=993480f4-c7d8-455a-a03a-1275641099c0",
+      "cast": [
+        {
+          "name": "Hugo Weaving",
+          "role": "V"
+        }
+      ],
+      "crew": [
+        {
+          "name": "James McTeigue",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Constantine",
+      "releaseDate": "25 February 2005",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FcONSTANTINE.jpg?alt=media&token=7f380a36-86e2-49f3-881e-0544e078860d",
+      "cast": [
+        {
+          "name": "Keaneu Reeves",
+          "role": "John Constantine"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Marc Webb",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Superman",
+      "releaseDate": "11 July 2025",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2Fsuperman%20L.jpg?alt=media&token=4370f850-2258-43f5-92f9-c1f1c20bd7ce",
+      "cast": [
+        {
+          "name": "David Corenswet",
+          "role": "Clark kent/Superman"
+        }
+      ],
+      "crew": [
+        {
+          "name": "James Gunn",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Deadpool and Wolverine",
+      "releaseDate": "26 July 2024",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2Fdeadpool-and-wolverine.jpg?alt=media&token=b274a92d-f03f-4d91-b53c-16d564ab1b62",
+      "cast": [
+        {
+          "name": "Ryan Reynolds",
+          "role": "Deadpool"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Shawn Levy",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Venom The Last Dance",
+      "releaseDate": "25 Oct 2024",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FVenom%203.png?alt=media&token=c23a5d5a-5630-416d-aae3-d9dcff3ef3ac",
+      "cast": [
+        {
+          "name": "Tom Hardy",
+          "role": "Venom"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Kelly Marcel",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Spiderman Across the Spiderverse",
+      "releaseDate": "02 June 2023",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FAcross%20the%20spiderverse.webp?alt=media&token=a1583828-1462-4525-a926-1df2159571dc",
+      "cast": [
+        {
+          "name": "Oscar Isaac",
+          "role": "Spider-Man 2099"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Marc Webb",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "The Fantastic 4",
+      "releaseDate": "25 July 2025",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FMarvel%2FThe-Fantastic-Four.webp?alt=media&token=408c943d-bf32-4ad5-aed4-37ff5a4605b5",
+      "cast": [
+        {
+          "name": "Pedro Pascal",
+          "role": "Mr Fantastic"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Matt Shakman",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "The Batman 2",
+      "releaseDate": "2027-10-02",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FBatman2.jpg?alt=media&token=86cb475d-2a47-4768-9f21-2c0a381dd82e",
+      "cast": [
+        {
+          "name": "Actor 1",
+          "role": "Lead"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Director 1",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Flashpoint Paradox",
+      "releaseDate": "2003-10-23",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FFlashpointparadox.jpg?alt=media&token=2db4884d-dd1e-4243-87fd-ef48908d1ee1",
+      "cast": [
+        {
+          "name": "Actor 1",
+          "role": "Lead"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Director 1",
+          "role": "Director"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Deadpool",
+      "releaseDate": "2016-02-23",
+      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FDeadpool.jpg?alt=media&token=153609da-61c2-421b-83fe-4c610a0a5b07",
+      "cast": [
+        {
+          "name": "Ryan Reynolds",
+          "role": "Wade Wilson aka Deadpool"
+        }
+      ],
+      "crew": [
+        {
+          "name": "Tim Miller",
+          "role": "Director"
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "id": "1",
+      "title": "Zack Snyder's Justice League",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736396337/ZSJL_etkmvb.mp4"
+    },
+    {
+      "id": "2",
+      "title": "Avengers Infinity War",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736395942/Infinity_War_ctrmeb.mp4"
+    },
+    {
+      "id": "3",
+      "title": "The Dark Knight",
+      "src": "/public/videos/The Dark knight.mp4"
+    },
+    {
+      "id": "4",
+      "title": "Avengers Endgame",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736395870/Endgame_oerj4b.mp4"
+    },
+    {
+      "id": "5",
+      "title": "Man Of Steel",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736396802/MOS_fhuse7.mp4"
+    },
+    {
+      "id": "6",
+      "title": "Joker Folie Deux",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736396841/Joker_Folie_a_deux_lohkti.mp4"
+    },
+    {
+      "id": "7",
+      "title": "Captain America Brave New World",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736395839/Captain_America_4_wjapea.mp4"
+    },
+    {
+      "id": "8",
+      "title": "Thunderbolts",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736394181/Thunderbolts_wvbney.mp4"
+    },
+    {
+      "id": "9",
+      "title": "Watchmen",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736396745/Watchmen_lcotga.mp4"
+    },
+    {
+      "id": "10",
+      "title": "V for Vendetta",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736396992/V_for_Vendetta_qdtrrb.mp4"
+    },
+    {
+      "id": "11",
+      "title": "Constantine",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736397068/Constantine_n3aeas.mp4"
+    },
+    {
+      "id": "12",
+      "title": "Superman",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736396266/Superman_mb3d9y.mp4"
+    },
+    {
+      "id": "13",
+      "title": "Deadpool and Wolverine",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736394176/Deadpool_and_Wolverine_j0wmob.mp4"
+    },
+    {
+      "id": "14",
+      "title": "Venom The Last Dance",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736396468/Venom_pdrw5c.mp4"
+    },
+    {
+      "id": "15",
+      "title": "Spiderman Across the Spiderverse",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736395700/Across_the_spiderverse_k4g333.mp4"
+    },
+    {
+      "id": "16",
+      "title": "The Fantastic 4",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736394183/The_Fantastic_4.mp4"
+    },
+    {
+      "id": "17",
+      "title": "superman",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736396266/Superman_mb3d9y.mp4"
+    },
+    {
+      "id": "18",
+      "title": "Flashpoint Paradox",
+      "src": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/videos%2FDeadpool%20end%20credits%20in%20tamil%20(official%20dubbing)%20_%20Deadpool%20(online-video-cutter.com).mp4?alt=media&token=ffd86b49-5695-4fe9-b5e1-6697160537ac"
+    },
+    {
+      "id": "19",
+      "title": "Deadpool",
+      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736403456/Deadpool_and_Wolverine_abjdti.mp4"
+    }
+  ],
+  "users": [
+    {
+      "username": "user1",
+      "password": "pass123"
+    },
+    {
+      "username": "Pranesh",
+      "password": "62145090"
+    },
+    {
+      "username": "gupalani",
+      "password": "Guna@?2004"
+    },
+    {
+      "username": "Surya",
+      "password": "Batman"
+    },
+    {
+      "username": "Clark",
+      "password": "Superman"
+    }
+  ],
+  "admins": [
+    {
+      "username": "admin",
+      "password": "adminpass"
+    }
+  ]
+}
