@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>YOUR <span style="color: red;">WATCHLIST</span></h1>
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/watchlist">WATCHLIST</a>
+        <% if (user) { %>
+            <a href="/logout">LOGOUT</a>
+        <% } else { %>
+            <a href="/login">LOGIN</a>
+        <% } %>
+    </nav>
+    <div class="movie-search">
+        <div id="search-bar-container">
+            <input type="text" id="search-bar" placeholder="Search for a movie...">
+        </div>
+    </div>        
+</header>
+
+<main>
+    <div class="watchlist-container">
+        <% if (watchlist && watchlist.length > 0) { %>
+            <div class="watchlist-grid">
+                <% watchlist.forEach(movie => { %>                 
+                    <div class="watchlist-item">
+                        <img src="<%= movie.poster.startsWith('https://') ? movie.poster : '/' + movie.poster %>" alt="<%= movie.title %>">
+                        <a href="/movie/<%= movie.id %>"><%= movie.title %></a>
+                        <button class="remove-from-watchlist-btn" data-id="<%= movie.id %>">Remove</button>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <p class="empty-watchlist-message"> </p>
+        <% } %>
+    </div>    
+</main>
+
+<footer>
+    <p>&copy; <span id="current-year"></span> COMICS <span style="color: red;">TV</span></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/public/Javascript/script.js"></script>
+
+</body>
+</html>
