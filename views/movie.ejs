@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %></title>
+    <link rel="icon" href="<%= movie.poster %>">
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 style="color: red;"><%= movie.title %></h1>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/watchlist">WATCHLIST</a>
+            <% if (user) { %>
+                <a href="/logout">LOGOUT</a>
+            <% } else { %>
+                <a href="/login">LOGIN</a>
+            <% } %>
+        </nav>
+    </header>
+
+    <main>
+        <div class="movie-details">
+            <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+            <h2>Release Date: <%= movie.releaseDate %></h2>
+            <p>Cast: 
+                <% movie.cast.forEach(castMember => { %>
+                    <span><%= castMember.name %> as <%= castMember.role %></span><br>
+                <% }); %>
+            </p>
+            <p>Crew:
+                <% movie.crew.forEach(crewMember => { %>
+                    <span><%= crewMember.name %> (<%= crewMember.role %>)</span><br>
+                <% }); %>
+            </p>
+
+            <!-- Watch Now Button -->
+            <% if (user) { %>
+                <button class="watch-now-btn">
+                    <a id="Resume" href="/video/<%= movie.id %>">Watch Now</a>
+                </button>
+            <% } else { %>
+                <button class="watch-now-btn">
+                    <a id="Resume" href="/login?redirectTo=/video/<%= movie.id %>">Watch Now</a>
+                </button>
+            <% } %>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> COMICS <span style="color: red;">TV</span></p>
+    </footer>
+    <script src="/public/javascript/script.js"></script>
+</body>
+</html>
