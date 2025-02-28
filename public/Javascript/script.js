@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         videoElement.addEventListener('pause', () => {
             localStorage.setItem(videoKey, videoElement.currentTime);
-        
+             
             console.log(`Video paused at ${videoElement.currentTime} seconds.`);          
         }); 
     }

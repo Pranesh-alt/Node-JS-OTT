@@ -48,7 +48,7 @@ function saveData() {
     fs.writeFileSync(path.join(__dirname, 'data.json'), JSON.stringify(data, null, 2));
 }
 
-// ✅ Middleware to check user authentication
+//  Middleware to check user authentication
 function requireLogin(req, res, next) {
     if (!req.session.user) {
         return res.redirect(`/login?redirectTo=${req.originalUrl}`);
@@ -56,7 +56,7 @@ function requireLogin(req, res, next) {
     next();
 }
 
-// ✅ Middleware to check admin authentication
+//  Middleware to check admin authentication
 function requireAdminLogin(req, res, next) {
     if (!req.session.admin) {
         return res.redirect('/admin/login');
@@ -64,12 +64,12 @@ function requireAdminLogin(req, res, next) {
     next();
 }
 
-// ✅ Admin Login Page
+//  Admin Login Page
 app.get('/admin/login', (req, res) => {
     res.render('adminLogin', { error: null });
 });
 
-// ✅ Handle Admin Login
+//  Handle Admin Login
 app.post('/admin/login', (req, res) => {
     const { username, password } = req.body;
     // Use your MySQL database to validate admin credentials
@@ -86,19 +86,19 @@ app.post('/admin/login', (req, res) => {
     });
 });
 
-// ✅ Admin Logout Route
+//  Admin Logout Route
 app.get('/admin/logout', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/admin/login');
     });
 });
 
-// ✅ Admin Page (Only accessible by logged-in admins)
+//  Admin Page (Only accessible by logged-in admins)
 app.get('/admin', requireAdminLogin, (req, res) => {
     res.render('admin');
 });
 
-// ✅ Admin Route to Add Movie
+//  Admin Route to Add Movie
 app.post('/admin/add-movie', requireAdminLogin, (req, res) => {
     const { title, releaseDate, poster, cast, crew } = req.body;
     if (!title || !releaseDate || !poster || !cast || !crew) {
@@ -121,7 +121,7 @@ app.post('/admin/add-movie', requireAdminLogin, (req, res) => {
     }
 });
 
-// ✅ Admin Route to Upload Video
+//  Admin Route to Upload Video
 app.post('/admin/upload-video', requireAdminLogin, (req, res) => {
     const { title, videoLink } = req.body;
     if (!title || !videoLink) {
@@ -137,12 +137,12 @@ app.post('/admin/upload-video', requireAdminLogin, (req, res) => {
     res.redirect('/admin');
 });
 
-// ✅ Route to Home Page
+//  Route to Home Page
 app.get('/', (req, res) => {
     res.render('home', { movies: data.movies, user: req.session.user });
 });
 
-// ✅ Route to Movie Details Page
+//  Route to Movie Details Page
 app.get('/movie/:id', (req, res) => {
     const movie = data.movies.find(movie => movie.id === req.params.id);
     if (movie) {
@@ -152,7 +152,7 @@ app.get('/movie/:id', (req, res) => {
     }
 });
 
-// ✅ Route to Video Player Page (Requires Login)
+//  Route to Video Player Page (Requires Login)
 app.get('/video/:id', (req, res) => {
     if (!req.session.user) {
         return res.redirect(`/login?redirectTo=/video/${req.params.id}`);
@@ -166,12 +166,12 @@ app.get('/video/:id', (req, res) => {
     }
 });
 
-// ✅ User Login Page
+//  User Login Page
 app.get('/login', (req, res) => {
     res.render('login', { error: null, redirectTo: req.query.redirectTo });
 });
 
-// ✅ Handle User Login (WITHOUT bcrypt)
+//  Handle User Login (WITHOUT bcrypt)
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
@@ -193,12 +193,12 @@ app.post('/login', (req, res) => {
     });
 });
 
-// ✅ User Signup Page
+//  User Signup Page
 app.get('/signup', (req, res) => {
     res.render('signup', { error: null });
 });
 
-// ✅ Handle User Signup (WITHOUT bcrypt)
+//  Handle User Signup (WITHOUT bcrypt)
 app.post('/signup', (req, res) => {
     const { username, password } = req.body;
 
@@ -218,7 +218,7 @@ app.post('/signup', (req, res) => {
 
         // Insert the new user into the database WITHOUT hashing
         const insertQuery = 'INSERT INTO users (username, password) VALUES (?, ?)';
-        db.query(insertQuery, [username, password], (err, result) => {
+          db.query(insertQuery, [username, password], (err, result) => {
             if (err) {
                 return res.render('signup', { error: "An error occurred while saving the user" });
             }
@@ -229,14 +229,14 @@ app.post('/signup', (req, res) => {
     });
 });
 
-// ✅ User Logout Route
+//  User Logout Route
 app.get('/logout', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/');
     });
 });
 
-// ✅ Watchlist Route
+//  Watchlist Route
 app.get('/watchlist', (req, res) => {
     if (!req.session.user) {
         return res.redirect('/login?redirectTo=/watchlist');
