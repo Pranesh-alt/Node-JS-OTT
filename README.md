@@ -1,40 +1,48 @@
-# Node-JS-OTT
+📺 COMICS TV - OTT Platform Backend
 
-A Node.js-powered backend for an OTT (Over-The-Top) platform named COMICS TV.
+📖 Table of Contents
 
-Table of Contents
+🎯 Features
 
-Features
+📋 Requirements
 
-Requirements
+⚙️ Installation
 
-Usage
+🚀 Usage
 
+🌍 Deployment
 
-Features
+🎯 Features
 
-Search and Filter: Search videos by title.
+✅ Search and Filter: Search videos by title.✅ Database for Users: Store and manage user accounts securely.✅ Watchlist: Add videos to a personalized watchlist.✅ Play/Pause Feature: Control video playback with play and pause options.✅ No Database Dependency for Videos: Uses JSON files for video management.
 
-No Database Dependency: Uses JSON files.
+📋 Requirements
 
-Watchlist: Add videos to a personalized watchlist.
+Ensure you have the following installed on your system:
 
-Play/Pause Feature: Control video playback with play and pause options.
+🟢 Node.js (v16.0.0 or later)
 
+📦 npm (v8.0.0 or later)
 
+⚙️ Installation
 
-Requirements
+# Clone the repository
+git clone https://github.com/your-repo/comics-tv.git
+cd comics-tv
 
-To run this project, ensure you have the following installed on your system:
+# Install dependencies
+npm install
 
-Node.js (v16.0.0 or later)
+🚀 Usage
 
-npm (v8.0.0 or later)
+Run the development server:
 
+npm start
 
+Use the base URL: http://localhost:4000.
 
-Usage
+🌍 Deployment
 
-
-Use the base URL http://localhost:4000.
+The full-stack application is deployed on Render. Access it here:
+🔗 Live URL: https://node-js-ott-6.onrender.com/
 
