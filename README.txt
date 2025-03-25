@@ -14,7 +14,11 @@
 
 🎯 Features
 
-✅ Search and Filter: Search videos by title.✅ Database for Users: Store and manage user accounts securely.✅ Watchlist: Add videos to a personalized watchlist.✅ Play/Pause Feature: Control video playback with play and pause options.✅ No Database Dependency for Videos: Uses JSON files for video management.
+✅ Search and Filter: Search videos by title.
+✅ Database for Users: Store and manage user accounts securely.
+✅ Watchlist: Add videos to a personalized watchlist.
+✅ Play/Pause Feature: Control video playback with play and pause options.
+✅ No Database Dependency for Videos: Uses JSON files for video management.
 
 📋 Requirements
 
