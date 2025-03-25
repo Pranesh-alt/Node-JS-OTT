@@ -1,8 +1,9 @@
 const express = require('express');
 const path = require('path');
-const mysql = require('mysql2')
 const fs = require('fs');
+const mysql = require('mysql2');
 const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 const app = express();
 
 // Middleware
@@ -13,23 +14,32 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 // MySQL connection setup
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',  // Your MySQL username
-    password: 'pranesh@2003',  // Your MySQL password
-    database: 'comics_tv'
-});
+const dbConfig = {
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASS || '62145090pranesh',
+    database: process.env.DB_NAME || 'comics_tv'
+};
+
+const db = mysql.createConnection(dbConfig);
 
 db.connect((err) => {
-    if (err) throw err;
+    if (err) {
+        console.error('Database connection failed:', err);
+        process.exit(1);
+    }
     console.log('Connected to MySQL database');
 });
 
-// Session setup for authentication
+// MySQL session store setup
+const sessionStore = new MySQLStore(dbConfig);
+
 app.use(session({
-    secret: 'your_secret_key',
+    secret: process.env.SESSION_SECRET || 'your_secret_key',
+    store: sessionStore,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
+    cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
 }));
 
 // Load and save data functions
