@@ -82,7 +82,7 @@ app.get('/admin/login', (req, res) => {
 //  Handle Admin Login
 app.post('/admin/login', (req, res) => {
     const { username, password } = req.body;
-    // Use your MySQL database to validate admin credentials
+    // Use MySQL database to validate admin credentials
     const query = 'SELECT * FROM admins WHERE username = ? AND password = ?';
     db.query(query, [username, password], (err, results) => {
         if (err) {
@@ -103,7 +103,7 @@ app.get('/admin/logout', (req, res) => {
     });
 });
 
-//  Admin Page (Only accessible by logged-in admins)
+//  Admin Page
 app.get('/admin', requireAdminLogin, (req, res) => {
     res.render('admin');
 });
@@ -162,7 +162,7 @@ app.get('/movie/:id', (req, res) => {
     }
 });
 
-//  Route to Video Player Page (Requires Login)
+//  Route to Video Player Page
 app.get('/video/:id', (req, res) => {
     if (!req.session.user) {
         return res.redirect(`/login?redirectTo=/video/${req.params.id}`);
@@ -181,7 +181,7 @@ app.get('/login', (req, res) => {
     res.render('login', { error: null, redirectTo: req.query.redirectTo });
 });
 
-//  Handle User Login (WITHOUT bcrypt)
+//  Handle User Login
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
@@ -208,7 +208,7 @@ app.get('/signup', (req, res) => {
     res.render('signup', { error: null });
 });
 
-//  Handle User Signup (WITHOUT bcrypt)
+//  Handle User Signup 
 app.post('/signup', (req, res) => {
     const { username, password } = req.body;
 
@@ -226,7 +226,7 @@ app.post('/signup', (req, res) => {
             return res.render('signup', { error: "Username already exists" });
         }
 
-        // Insert the new user into the database WITHOUT hashing
+        // Insert the new user into the database
         const insertQuery = 'INSERT INTO users (username, password) VALUES (?, ?)';
           db.query(insertQuery, [username, password], (err, result) => {
             if (err) {
@@ -256,6 +256,6 @@ app.get('/watchlist', (req, res) => {
 });
 
 // Start the server
-app.listen(4000, () => {
-    console.log('Server is running on http://localhost:4000');
+app.listen(1000, () => {
+    console.log('Server is running on http://localhost:1000');
 });

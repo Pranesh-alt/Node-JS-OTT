@@ -10,12 +10,35 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     color: black;
-    background-color: #0f2027;
+    background-color: black;
     overflow-x: hidden;
     height: 100vh;
     transition: background 0.5s ease;
 }
 
+.home{
+    width: 100%;
+    max-width: 1470px;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    background-color: black;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+#myVideo {
+    position: sticky;
+    width: 102%;
+   height: 80%;
+  }
+
+.content {
+    position: sticky;
+    left: 0;
+    background:black;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+}  
 /* Universal Container Styling */
 .container {
     width: 90%;
@@ -28,7 +51,7 @@ body {
 header {
     background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 2px 0;
+    padding: 20px 0;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     position: sticky;
@@ -130,6 +153,7 @@ section div{
     color: #ff4500;
     text-shadow: 0px 2px 5px rgba(255, 69, 0, 0.6);
 }
+
 
 
 /* Footer Styling */
@@ -473,7 +497,7 @@ video:hover {
 
 /* search */
 .movie-search {
-    margin: 80px auto;
+    margin: 8px auto;
     text-align: center;
     position: relative;
 }
