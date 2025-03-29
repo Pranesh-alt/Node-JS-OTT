@@ -49,6 +49,7 @@ body {
 
 /* Header Styling */
 header {
+    position: fixed;
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px 0;
@@ -109,7 +110,7 @@ section div{
 .movie-card {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 300px;
     background: linear-gradient(to bottom, #222, #111);
     border-radius: 12px;
     overflow: hidden;
@@ -143,7 +144,7 @@ section div{
 .movie-link span {
     display: block;
     padding: 12px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #ff6f61;
     transition: color 0.3s ease-in-out;

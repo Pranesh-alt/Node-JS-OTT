@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const showEmptyMessage = (container) => {
         container.innerHTML = '';
-        const emptyMessage = document.createElement('p');
+        const emptyMessage = document.createElement('h2');
         emptyMessage.innerHTML = 'Your Watchlist is <span style="color:red;">EMPTY</span>';
         container.appendChild(emptyMessage);
     };

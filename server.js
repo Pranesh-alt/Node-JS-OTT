@@ -32,15 +32,15 @@ db.connect((err) => {
 });
 
 // // // MySQL session store setup
-// // const sessionStore = new MySQLStore(dbConfig);
+const sessionStore = new MySQLStore(dbConfig);
 
-// // app.use(session({
-// //     secret: process.env.SESSION_SECRET || 'your_secret_key',
-// //     store: sessionStore,
-// //     resave: false,
-// //     saveUninitialized: false,
-// //     cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
-// }));
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'your_secret_key',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
+}));
 
 // Load and save data functions
 function loadData() {
@@ -125,6 +125,7 @@ app.post('/admin/add-movie', requireAdminLogin, (req, res) => {
         };
         data.movies.push(newMovie);
         saveData();
+        console.log("Movie added:", newMovie)
         res.redirect('/admin');
     } catch (error) {
         res.status(400).send('Invalid JSON format for cast or crew');
