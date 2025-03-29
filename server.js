@@ -31,16 +31,16 @@ db.connect((err) => {
     console.log('Connected to MySQL database');
 });
 
-// MySQL session store setup
-const sessionStore = new MySQLStore(dbConfig);
+// // // MySQL session store setup
+// // const sessionStore = new MySQLStore(dbConfig);
 
-app.use(session({
-    secret: process.env.SESSION_SECRET || 'your_secret_key',
-    store: sessionStore,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
-}));
+// // app.use(session({
+// //     secret: process.env.SESSION_SECRET || 'your_secret_key',
+// //     store: sessionStore,
+// //     resave: false,
+// //     saveUninitialized: false,
+// //     cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
+// }));
 
 // Load and save data functions
 function loadData() {

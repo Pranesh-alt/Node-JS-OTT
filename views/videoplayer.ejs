@@ -24,7 +24,7 @@
 <main class="video-player-container">
     <div id="loading-message">Loading video...</div>
     
-    <video id="video" controls onloadeddata="hideLoadingMessage()">
+    <video id="video" controls >
         <source src="<%= video.src %>" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -34,11 +34,7 @@
     <p>&copy; <span id="current-year"></span> COMICS <span style="color: red;">TV</span></p>
 </footer>
 
-<script>
-    function hideLoadingMessage() {
-        document.getElementById("loading-message").style.display = "none";
-    }
-</script>
+
 
 <script src="/public/javascript/script.js"></script>
 
