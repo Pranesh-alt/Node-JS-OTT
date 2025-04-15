@@ -49,13 +49,12 @@ body {
 
 /* Header Styling */
 header {
-    position: fixed;
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px 0;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 10;
     transition: background 0.3s ease;

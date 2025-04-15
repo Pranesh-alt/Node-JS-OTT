@@ -323,24 +323,6 @@
           "role": "Director"
         }
       ]
-    },
-    {
-      "id": "19",
-      "title": "Deadpool",
-      "releaseDate": "2016-02-23",
-      "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FDeadpool.jpg?alt=media&token=153609da-61c2-421b-83fe-4c610a0a5b07",
-      "cast": [
-        {
-          "name": "Ryan Reynolds",
-          "role": "Wade Wilson aka Deadpool"
-        }
-      ],
-      "crew": [
-        {
-          "name": "Tim Miller",
-          "role": "Director"
-        }
-      ]
     }
   ],
   "videos": [
@@ -433,11 +415,6 @@
       "id": "18",
       "title": "Flashpoint Paradox",
       "src": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/videos%2FDeadpool%20end%20credits%20in%20tamil%20(official%20dubbing)%20_%20Deadpool%20(online-video-cutter.com).mp4?alt=media&token=ffd86b49-5695-4fe9-b5e1-6697160537ac"
-    },
-    {
-      "id": "19",
-      "title": "Deadpool",
-      "src": "https://res.cloudinary.com/dhrqc7m0s/video/upload/v1736403456/Deadpool_and_Wolverine_abjdti.mp4"
     }
   ],
   "users": [

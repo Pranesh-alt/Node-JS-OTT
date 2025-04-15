@@ -4,6 +4,7 @@ const fs = require('fs');
 const mysql = require('mysql2');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+const bcrypt = require('bcrypt');
 const app = express();
 
 // Middleware
@@ -35,11 +36,11 @@ db.connect((err) => {
 const sessionStore = new MySQLStore(dbConfig);
 
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'your_secret_key',
+    secret: process.env.SESSION_SECRET || 'pranesh',
     store: sessionStore,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
+    cookie: { secure: process.env.NODE_ENV === 'production' }
 }));
 
 // Load and save data functions
@@ -58,13 +59,6 @@ function saveData() {
     fs.writeFileSync(path.join(__dirname, 'data.json'), JSON.stringify(data, null, 2));
 }
 
-//  Middleware to check user authentication
-function requireLogin(req, res, next) {
-    if (!req.session.user) {
-        return res.redirect(`/login?redirectTo=${req.originalUrl}`);
-    }
-    next();
-}
 
 //  Middleware to check admin authentication
 function requireAdminLogin(req, res, next) {
@@ -82,7 +76,7 @@ app.get('/admin/login', (req, res) => {
 //  Handle Admin Login
 app.post('/admin/login', (req, res) => {
     const { username, password } = req.body;
-    // Use MySQL database to validate admin credentials
+    //  MySQL database to validate admin credentials
     const query = 'SELECT * FROM admins WHERE username = ? AND password = ?';
     db.query(query, [username, password], (err, results) => {
         if (err) {
@@ -125,12 +119,12 @@ app.post('/admin/add-movie', requireAdminLogin, (req, res) => {
         };
         data.movies.push(newMovie);
         saveData();
-        console.log("Movie added:", newMovie)
         res.redirect('/admin');
+        console.log("Movie added:", newMovie)
     } catch (error) {
         res.status(400).send('Invalid JSON format for cast or crew');
     }
-});
+}); 
 
 //  Admin Route to Upload Video
 app.post('/admin/upload-video', requireAdminLogin, (req, res) => {
@@ -186,23 +180,36 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
-    db.query(query, [username, password], (err, results) => {
+    const query = 'SELECT * FROM users WHERE username = ?';
+    db.query(query, [username], (err, results) => {
         if (err) {
             return res.render('login', { error: "An error occurred", redirectTo: req.body.redirectTo });
         }
+
         if (results.length === 0) {
             return res.render('login', { error: "Invalid username or password", redirectTo: req.body.redirectTo });
         }
 
-        req.session.user = username;
-        if (req.body.redirectTo) {
-            return res.redirect(req.body.redirectTo);
-        }
+        const user = results[0];
 
-        res.redirect('/');
+        // Compare hashed password
+        bcrypt.compare(password, user.password, (err, isMatch) => {
+            if (err || !isMatch) {
+                return res.render('login', { error: "Invalid username or password", redirectTo: req.body.redirectTo });
+            }
+
+            // Passwords match
+            req.session.user = username;
+
+            if (req.body.redirectTo) {
+                return res.redirect(req.body.redirectTo);
+            }
+
+            res.redirect('/');
+        });
     });
 });
+
 
 //  User Signup Page
 app.get('/signup', (req, res) => {
@@ -227,15 +234,22 @@ app.post('/signup', (req, res) => {
             return res.render('signup', { error: "Username already exists" });
         }
 
-        // Insert the new user into the database
-        const insertQuery = 'INSERT INTO users (username, password) VALUES (?, ?)';
-          db.query(insertQuery, [username, password], (err, result) => {
+        // Hash the password before saving
+        const saltRounds = 10;
+        bcrypt.hash(password, saltRounds, (err, hashedPassword) => {
             if (err) {
-                return res.render('signup', { error: "An error occurred while saving the user" });
+                return res.render('signup', { error: "Error while hashing password" });
             }
 
-            req.session.user = username; // Log the user in after signup
-            res.redirect('/');
+            const insertQuery = 'INSERT INTO users (username, password) VALUES (?, ?)';
+            db.query(insertQuery, [username, hashedPassword], (err, result) => {
+                if (err) {
+                    return res.render('signup', { error: "An error occurred while saving the user" });
+                }
+
+                req.session.user = username; // Log the user in after signup
+                res.redirect('/');
+            });
         });
     });
 });
@@ -260,3 +274,13 @@ app.get('/watchlist', (req, res) => {
 app.listen(1000, () => {
     console.log('Server is running on http://localhost:1000');
 });
+
+
+
+//  Middleware to check user authentication
+// function requireLogin(req, res, next) {
+//     if (!req.session.user) {
+//         return res.redirect(`/login?redirectTo=${req.originalUrl}`);
+//     }
+//     next();
+// }
